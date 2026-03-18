@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://x-raydar.info"><img src="assets/logo.png" alt="X-Raydar" width="320" /></a>
+  <a href="https://x-raydar.info"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/logo-light.png"><source media="(prefers-color-scheme: light)" srcset="assets/logo-dark.png"><img src="assets/logo-dark.png" alt="X-Raydar" width="320" /></picture></a>
 </p>
 
 <h3 align="center">X-Raydar — Chest X-Ray Image Classifier</h3>
