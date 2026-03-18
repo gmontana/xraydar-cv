@@ -86,7 +86,7 @@ See `requirements.txt` for pinned versions.
 
 ## Related
 
-- **NLP model** (radiology report classifier): [x-raydar-nlp](https://github.com/x-raydar/x-raydar-nlp) &middot; [HuggingFace](https://huggingface.co/dnamodel/xraydar-nlp)
+- **NLP model** (radiology report classifier): [x-raydar-nlp](https://github.com/gmontana/xraydar-nlp) &middot; [HuggingFace](https://huggingface.co/dnamodel/xraydar-nlp)
 
 ## Citation
 
