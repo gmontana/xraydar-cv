@@ -1,20 +1,22 @@
-<h1 align="center">X-Raydar CV</h1>
-
 <p align="center">
-  <a href="https://x-raydar.info"><img src="https://www.x-raydar.info/img/logos/logo-online.png" alt="X-Raydar" /></a>
+  <a href="https://x-raydar.info"><img src="assets/logo.png" alt="X-Raydar" width="320" /></a>
 </p>
 
+<h3 align="center">X-Raydar — Chest X-Ray Image Classifier</h3>
+
 <p align="center">
-  <a href="https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00218-2/fulltext">Paper</a> &middot;
-  <a href="https://huggingface.co/dnamodel/xraydar-cv">Model Weights</a> &middot;
-  <a href="https://x-raydar.info">Website</a>
+  <a href="https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00218-2/fulltext"><img src="https://img.shields.io/badge/Paper-The_Lancet_Digital_Health-blue" alt="Paper" /></a>
+  <a href="https://huggingface.co/dnamodel/xraydar-cv"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Model_Weights-yellow" alt="HuggingFace" /></a>
+  <a href="https://x-raydar.info"><img src="https://img.shields.io/badge/Website-x--raydar.info-green" alt="Website" /></a>
 </p>
 
-Computer vision component of [X-Raydar](https://x-raydar.info), from ["Development and validation of open-source deep neural networks for comprehensive chest x-ray reading"](https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00218-2/fulltext) (Cid, Macpherson et al., *The Lancet Digital Health*, 2024).
+---
 
-A multi-scale Inception v3 ensemble (XNet38MS) that detects **37 radiological findings** in chest X-rays. Three models at resolutions 299, 512, and 1024 pixels are averaged at inference time. Trained on over 2.5 million studies from six NHS hospitals.
+Computer vision component of [X-Raydar](https://x-raydar.info), a deep learning system that detects **37 radiological findings** in chest X-rays in real-time. Trained on over **2.5 million studies** from six NHS hospitals across the UK.
 
-> **NOTE: This is not for clinical use.**
+A multi-scale Inception v3 ensemble (XNet38MS) at three resolutions (299, 512, 1024px), averaged at inference time.
+
+> **This is not for clinical use.**
 
 ## Quick Start
 
@@ -45,14 +47,11 @@ import pydicom
 import utils.dicom_utils as dicom_utils
 import model_20210820_XNet38MS.predict as predict
 
-# Build the multi-scale model (loads 3 resolutions)
 model = predict.build_model()
 
-# Load and preprocess a DICOM file
 dicom = pydicom.dcmread("demo_data/04f72062c19d9cd7a55519708aa2cc58b5e52b52")
 image = dicom_utils.img_clean(dicom)
 
-# Predict 37 radiological findings
 report = predict.main(image, model)
 print(report["AI_prediction"])
 ```
@@ -86,7 +85,9 @@ See `requirements.txt` for pinned versions.
 
 ## Related
 
-- **NLP model** (radiology report classifier): [x-raydar-nlp](https://github.com/gmontana/xraydar-nlp) &middot; [HuggingFace](https://huggingface.co/dnamodel/xraydar-nlp)
+| | Repository | Weights |
+|-|-----------|---------|
+| **Report classifier** | [gmontana/xraydar-nlp](https://github.com/gmontana/xraydar-nlp) | [dnamodel/xraydar-nlp](https://huggingface.co/dnamodel/xraydar-nlp) |
 
 ## Citation
 
@@ -111,6 +112,4 @@ Academic research and non-commercial evaluation only. See [LICENSE](LICENSE) for
 
 ## Contact
 
-Giovanni Montana — [g.montana@warwick.ac.uk](mailto:g.montana@warwick.ac.uk)
-
-Commercial licensing — Warwick Ventures — [ventures@warwick.ac.uk](mailto:ventures@warwick.ac.uk)
+Giovanni Montana — [g.montana@warwick.ac.uk](mailto:g.montana@warwick.ac.uk) · Commercial licensing — [ventures@warwick.ac.uk](mailto:ventures@warwick.ac.uk)
