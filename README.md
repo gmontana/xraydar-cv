@@ -49,14 +49,15 @@ import model_20210820_XNet38MS.predict as predict
 
 model = predict.build_model()
 
-dicom = pydicom.dcmread("demo_data/04f72062c19d9cd7a55519708aa2cc58b5e52b52")
+dicom = pydicom.dcmread("path/to/chest_xray.dcm")
 image = dicom_utils.img_clean(dicom)
 
 report = predict.main(image, model)
 print(report["AI_prediction"])
 ```
 
-Demo DICOM files are provided in `demo_data/`.
+Demo images are not distributed with this repository. Use a frontal chest radiograph in DICOM format, for example from the public
+[RSNA Pneumonia Detection Challenge](https://www.kaggle.com/c/rsna-pneumonia-detection-challenge) dataset.
 
 ## Project Structure
 
@@ -95,10 +96,11 @@ See `requirements.txt` for pinned versions.
 @article{cid2024development,
   title={Development and validation of open-source deep neural networks for
          comprehensive chest x-ray reading: a retrospective, multicentre study},
-  author={Cid, Yan Digilov and Macpherson, Matt and Gervais-Andre, Luc and
-          Zhu, Yinghui and Franco, Guillermo and Santeramo, Ruggiero and
-          Mudali, Divya and Wood, Orlando and Montague, Eoin and Wei, Jiefei and
-          others},
+  author={Cid, Yashin Dicente and Macpherson, Matthew and Gervais-Andre, Louise and
+          Zhu, Yuanyi and Franco, Giuseppe and Santeramo, Ruggiero and Lim, Chee and
+          Selby, Ian and Muthuswamy, Keerthini and Amlani, Ashik and Hopewell, Heath and
+          Indrajeet, Das and Liakata, Maria and Hutchinson, Charles E. and Goh, Vicky and
+          Montana, Giovanni},
   journal={The Lancet Digital Health},
   volume={6}, number={1}, pages={e44--e57},
   year={2024}, publisher={Elsevier},
